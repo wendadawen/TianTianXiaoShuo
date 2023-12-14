@@ -1,0 +1,58 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Go 语言编程之旅：一起用 Go 做项目",
+        "title": "template模板",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/book/all/chapter": {
+            "get": {
+                "tags": [
+                    "书籍/book"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "default": "斗罗大陆",
+                        "description": "书名",
+                        "name": "bookName",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "default": "第一章",
+                        "description": "第几章",
+                        "name": "chapter",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/result.Result"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "result.Result": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "data": {},
+                "msg": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

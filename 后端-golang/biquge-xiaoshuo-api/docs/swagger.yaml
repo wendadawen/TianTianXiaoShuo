@@ -1,0 +1,38 @@
+definitions:
+  result.Result:
+    properties:
+      code:
+        type: integer
+      data: {}
+      msg:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Go 语言编程之旅：一起用 Go 做项目
+  title: template模板
+  version: "1.0"
+paths:
+  /book/all/chapter:
+    get:
+      parameters:
+      - default: 斗罗大陆
+        description: 书名
+        in: formData
+        name: bookName
+        required: true
+        type: string
+      - default: 第一章
+        description: 第几章
+        in: formData
+        name: chapter
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/result.Result'
+      tags:
+      - 书籍/book
+swagger: "2.0"
